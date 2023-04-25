@@ -1,0 +1,64 @@
+._Loguin{
+    
+    width: 400px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 0px;
+    box-shadow: 7px 13px 37px #ffffff;
+    padding: 20px 30px;
+    border-top: 2px solid #ffffff;
+    color: rgb(0, 0, 0);
+    
+}
+
+._Loguin h1 {
+    margin: 0;
+    text-align: center;
+    height: 50px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 40px;
+}
+.controles{
+    width: 95%;
+    border: 1px solid #000000;
+    margin-bottom: 20px;
+    padding: 11px 10px;
+    background: #ebe8e8;
+    font-size: 10px;
+    font-weight: bold;
+}
+.botones{
+    width: 50%;
+    height: 40px;
+    background: #878686;
+    border: none;
+    color: rgb(2, 2, 2);
+    margin-bottom: 16px;
+    margin-top: 50px;
+    
+}
+._Loguin h4{
+    margin: 0;
+    text-align: center;
+    height: 50px;
+    font-size: 20px;
+
+}
+
+._Loguin p {
+    height:40 px;
+    text-align: center;
+    border-bottom: 1px solid;
+
+}
+._Loguin a{
+    color: rgb(73, 73, 73);
+    text-decoration: none;
+    font-size: 14px;
+}
+._Loguin a:hover{
+    text-decoration: underline;
+
+}
