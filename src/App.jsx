@@ -3,13 +3,13 @@ import {ComponenteHome} from './Componentes/ComponenteHome'
 import { ComponenteCrearPregunta } from './Componentes/ComponenteCrearPregunta'
 import './App.css'
 import './Estilos/PagPrincipal.css'
-
 import { useState } from 'react'
 import { FalsoVerdadero } from './Componentes/FalsoVerdadero'
 import { RespuestaMultiple } from './Componentes/RespuestaMultiple'
 import { RespuestaAbierta } from './Componentes/RespuestaAbierta'
-import { Presentacion } from './Componentes/Presentacion'
-import { RepasoForm } from './Componentes/RepasoForm'
+import { ComponenteRanking} from './Componentes/ComponenteRanking'
+import { Header } from './Componentes/Header'
+
 function App() {
   
   const[Validacion, setValidacion]=useState(true)
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-       
+      <Header></Header>
        
        <ComponenteLogin 
       setValidacion={setValidacion} 
@@ -67,13 +67,14 @@ function App() {
       >
         
       </RespuestaAbierta>
-      <RepasoForm
+      <ComponenteRanking
       EleccionRanking={ElegiRanking}
-      setValidarCrearPregunta={setValidarCrearPregunta}
+      setValidarHome={setValidarHome}
       setElegiRanking={setElegiRanking}
+    
       >
         
-      </RepasoForm>
+      </ComponenteRanking>
       </>
 
   )

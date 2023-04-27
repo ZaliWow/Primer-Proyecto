@@ -1,0 +1,56 @@
+.Ranking{ 
+   
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    margin-top: 0px;
+    box-shadow: 7px 13px 37px #ffffff;
+    padding: 20px 30px;
+    border-top: 2px solid #ffffff;
+    color: rgb(0, 0, 0);
+    
+}
+
+.ButtonHomeRanking{
+    width: 15%;
+    height: 40px;
+    background: #878686;
+    border: none;
+    color: rgb(2, 2, 2);
+    margin-bottom: 16px;
+    margin-top: 5px;
+    margin-left: 75%;
+}
+#contenido {
+    align-items: center;
+    margin: 20px auto;
+}
+.ContainerNombre{  
+    
+    text-align: center;  
+    width: 500px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    display: grid;
+    border:1px solid;
+}
+.ContainerTop{  
+    
+    text-align: center;  
+    width: 80px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    display: grid;
+    border:1px solid;
+}
+.ContainerPuntuacion{  
+    
+    text-align: center;  
+    width: 150px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    display: grid;
+    border:1px solid;
+}

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import '../Hooks/FormularioAbierta.jsx'
+
 export function RespuestaAbierta({
         EleccionAbierta,
         setValidarCrearPregunta,

@@ -2,7 +2,7 @@ import '../Estilos/_Login.css'
 import '../Estilos/Home.css'
 import '../Estilos/Titulos.css'
 import'../Estilos/FormularioPreguntas.css'
-import '../Hooks/FormularioVF.jsx'
+
 import { useRef } from 'react'
 export function FalsoVerdadero({
     EleccionYN,
