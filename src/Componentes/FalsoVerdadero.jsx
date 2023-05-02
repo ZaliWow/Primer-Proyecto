@@ -2,17 +2,10 @@ import '../Estilos/_Login.css'
 import '../Estilos/Home.css'
 import '../Estilos/Titulos.css'
 import'../Estilos/FormularioPreguntas.css'
-
+ 
 import { useRef } from 'react'
 export function FalsoVerdadero({
-    EleccionYN,
-    setValidarCrearPregunta,
-    setElegiYN,
-    
-   
-
-
-
+    ElegiFalsoVerdadero 
 }){
     // Aqui se crearon las variables para guardar la informacion de los inputs
     // realizada por el docente
@@ -27,33 +20,16 @@ export function FalsoVerdadero({
         console.log(preguntaVFRef.current.value);
         console.log(dificultadVFRef.current.value);
         console.log(respuestaVFRef.current.value);
-        setValidarCrearPregunta(true)
-        setElegiYN(false)
+        
     }
     // VolverAlhome cierra el componente de crear pregunta abierta y abre el componente del home
-    if(EleccionYN === false)return null;
-    const VolverAlHome=(evento)=>{
-        setValidarCrearPregunta(true)
-        setElegiYN(false)
-    }
+    if(ElegiFalsoVerdadero === false)return null;
+   
   
     return(
         <div
         className ="FormularioPreguntas"
         > 
-        
-        <button 
-                className='Button'
-                onClick={VolverAlHome}
-                >Oops!
-            </button>
-            <div
-                className ="Titulos"
-                >
-                <h1
-                >¡Crea una pregunta de tipo Falso Verdadero!
-                </h1>
-            </div>
 
             <section 
                  

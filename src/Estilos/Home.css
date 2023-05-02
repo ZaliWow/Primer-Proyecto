@@ -1,24 +1,19 @@
 .Home{
-    width: 1200px;
-    height: 500px;
-    background-color: rgb(255, 255, 255);
-    margin: auto;
-    margin-top: 0px;
-    box-shadow: 7px 13px 37px #ffffff;
-    padding: 20px 30px;
-    border-top: 2px solid #ffffff;
+    display: flex;
+    margin-left: 36%;
+    width: 50%;
+    height: auto;
+    
+  
+    margin-top: 3%;
+    
     color: rgb(0, 0, 0);
 
 }
-.Home button{
-    padding: 20px 30px;
-    background: #7a7979;
-    border: none;
-    color: rgb(2, 2, 2);
-    margin-bottom: 16px;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 50px;
+.HomePadding{
+    padding: 10px 20px;
+    
+   
 }
 .Home h4{
     text-align: justify;

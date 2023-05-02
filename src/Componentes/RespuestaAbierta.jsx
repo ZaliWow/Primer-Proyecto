@@ -1,9 +1,7 @@
 import { useRef } from 'react';
 
 export function RespuestaAbierta({
-        EleccionAbierta,
-        setValidarCrearPregunta,
-        setElegiAbierta,
+        ElegiRespuestaAbierta
 
         
 
@@ -19,33 +17,19 @@ export function RespuestaAbierta({
         evento.preventDefault();
         console.log(dificultadPreguntaAbiertaRef.current.value);
         console.log(PreguntaAbiertaRef.current.value);
-        setValidarCrearPregunta(true)
-        setElegiAbierta(false)
-    }
+        
+    } 
     
-    if(EleccionAbierta===false)return null;
+    if(ElegiRespuestaAbierta===false)return null;
     // // VolverAlhome cierra el componente de crear pregunta abierta y abre el componente del home
-    const VolverAlHome=(evento)=>{
-        setValidarCrearPregunta(true)
-        setElegiAbierta(false)
-    }
+   
      
 
     return(
         <div className="FormularioPreguntas">
-        <button 
-            className="Button"
-            onClick={VolverAlHome}
-            >Oops!
-        </button>
-        <div
-            className="Titulos"             
-            ><h1>¡Crea tu pregunta Abierta!</h1>
-        </div>
+        
         <section>
-        <h2
-        className="FormularioPreguntash2"
-        >Elige la dificultad</h2>
+       
         <form onSubmit={handleSubmit}>
 
 

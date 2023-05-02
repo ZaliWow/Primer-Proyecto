@@ -1,8 +1,12 @@
 import '../Estilos/_Login.css'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 export function ComponenteLogin({
     ValidarExistencia,
     setValidacion,
-    setValidarHome}){
+    setValidarHome,
+    
+  }){
 
 
     if(ValidarExistencia === false)return null;
@@ -10,30 +14,36 @@ export function ComponenteLogin({
     const desaparecer_boton =(evento)=>{
         setValidacion(false)
         setValidarHome(true)
+       
         
     }
-    
-
     return(
-        <>
-          <section className="_Loguin"> 
-          <h1>Login</h1>
-          <h4>Ingrese Usuario</h4>
-          <input 
-          className = "controles"
-          type="text" />
-          <h4>Ingrese Contraseña</h4>
-          <input
-          className = "controles"
-          type="password" />
-          <button
-          className="botones"
-          onClick={desaparecer_boton}
-          >Log in</button>
-        </section>
+        <div className='_Loguin'>
+ <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
+      <Button 
+      onClick={desaparecer_boton}
+      variant="dark" 
+      type="submit">
+        Submit
+      </Button>
+    </Form>
           
-         
-        </>
+        </div>
         
     )
 }

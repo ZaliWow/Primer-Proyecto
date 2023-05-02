@@ -1,66 +1,52 @@
 import "../Estilos/CrearPregunta.css"
 import "../Estilos/Titulos.css"
+import "../Estilos/Home.css"
+import { Recomendaciones } from "./ComponentesOpciones/Recomendaciones";
+import { OpcionesPreguntas } from "./ComponentesOpciones/OpcionesPreguntas";
+import { useState } from "react";
+import { FalsoVerdadero } from "./FalsoVerdadero"
+import {RespuestaAbierta} from "./RespuestaAbierta"
+import {RespuestaMultiple} from "./RespuestaMultiple"
 export function ComponenteCrearPregunta({
-     CrearPregunta,
-     setValidarHome,
-     setValidarCrearPregunta,
-     setElegiYN,
-     setElegiMultiple,
-     setElegiAbierta
+     ElegiCrearPregunta,
+     setValidarHome
     }){
-    if(CrearPregunta===false)return null;
-    const VolverHome =() =>{
-        setValidarCrearPregunta(false)
-        setValidarHome(true)
-        setElegiYN(false)
-        setElegiMultiple(false)
-        setElegiAbierta(false)
-    }
-    const CrearFalsoVerdadero =() =>{
-        setValidarCrearPregunta(false)
-        setElegiYN(true)
-        setElegiMultiple(false)
-        setElegiAbierta(false)
-    }
-    const CrearEleccionMultiple=() =>{
-        setValidarCrearPregunta(false)
-        setElegiYN(false)
-        setElegiMultiple(true)
-        setElegiAbierta(false)
-
-    }
-    const CrearAbierta=() =>{
-        setValidarCrearPregunta(false)
-        setElegiYN(false)
-        setElegiMultiple(false)
-        setElegiAbierta(true)
-
-    }
+    if(ElegiCrearPregunta===false)return null;
+   
+   const[CreandoFalsoVerdadero, setCreandoFalsoVerdadero]=useState(false)
+   const[CreandoMultipleRespuesta, setCreandoMultipleRespuesta]=useState(false)
+   const[CreandoAbierta, setCreandoAbierta]=useState(false)
+   const[Recomendar, setRecomendar]=useState(true)
+   const[Opciones,setOpciones]=useState(true)
     return(
-    <div >
-        <section
-         className="CrearPregunta">
-            
-            <button
-            className="ButtonHome"
-            onClick={VolverHome}
-            >volver al home</button>
-           <div className="Titulos">
-           <h1>¡Crea Tu pregunta!</h1>
-           </div>
-            <h2>Elige el tipo de pregunta</h2>
-            <button
-            className ="BotonesSeleccion"
-            onClick={CrearFalsoVerdadero}
-            >YesNo Question</button>
-            <button
-            className ="BotonesSeleccion"
-            onClick={CrearEleccionMultiple}
-            >Multiple Respuesta</button>
-            <button
-            className ="BotonesSeleccion"
-            onClick={CrearAbierta}
-            >Pregunta Abierta</button>
-        </section>
-    </div>)
+    <>
+    <div className="Linea">
+    <br />
+    <Recomendaciones
+    ValidarRecomendar={Recomendar}
+    ></Recomendaciones>
+    <br />
+    <OpcionesPreguntas
+    setCreandoFalsoVerdadero={setCreandoFalsoVerdadero}
+    setCreandoMultipleRespuesta={setCreandoMultipleRespuesta}
+    setCreandoAbierta={setCreandoAbierta}
+    setRecomendar={setRecomendar}
+    ValidarOpciones={Opciones}
+    setOpciones={setOpciones}
+    ></OpcionesPreguntas>
+    <br />
+    <FalsoVerdadero
+    ElegiFalsoVerdadero ={CreandoFalsoVerdadero}
+    ></FalsoVerdadero>
+    <RespuestaAbierta
+    ElegiRespuestaAbierta ={CreandoAbierta}
+    >
+    </RespuestaAbierta>
+    <RespuestaMultiple
+    ElegiMultipleRespuesta={CreandoMultipleRespuesta}
+    >
+    </RespuestaMultiple>
+    </div>
+    </>
+    )
 }

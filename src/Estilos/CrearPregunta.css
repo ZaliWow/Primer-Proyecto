@@ -1,25 +1,22 @@
 .CrearPregunta{
+    margin-top: 0%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 1px snow;
     
+}
+.Linea{
+    margin-left: 10%;
+    margin-right: 10%;
     width: 1000px;
-    height: 500px;
-    background-color: rgb(255, 255, 255);
-    margin: 0;
-    margin-top: 0px;
-    box-shadow: 7px 13px 37px #ffffff;
-    padding: 20px 30px;
-    border-top: 2px solid #ffffff;
-    color: rgb(0, 0, 0);
+    height: auto;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom:1px solid;
     
 }
-.ButtonHome{
-        height: 40px;
-        background: #878686;
-        border: 1px solid ;
-        color: rgb(2, 2, 2);
-        margin-bottom: 16px;
-        margin-left: 75%;
         
-}
+
 .BotonesSeleccion{
     border-top: 500px; 
     height: 40px;

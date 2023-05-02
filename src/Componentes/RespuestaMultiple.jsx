@@ -1,11 +1,9 @@
 import { useRef } from "react";
 
 export function RespuestaMultiple({
-        EleccionMultiple,
-        setValidarCrearPregunta,
-        setElegiMultiple
+        ElegiMultipleRespuesta
 
-    
+     
     }
     
     )
@@ -30,37 +28,19 @@ export function RespuestaMultiple({
         console.log(opcionBRef.current.value);
         console.log(opcionCRef.current.value);
         console.log(opcionDRef.current.value);
-        setElegiMultiple(false)
-        setValidarCrearPregunta(true)
+        
 
 
     }
     //////////Este if permite no mostrar el componente antes de ser llamado
-    if(EleccionMultiple===false)return null;
+    if(ElegiMultipleRespuesta===false)return null;
     // VolverAlhome cierra el componente de crear pregunta multiple y abre el componente del home
-    const VolverAlHome=(evento)=>{
-        setValidarCrearPregunta(true)
-        setElegiMultiple(false)
-    }
+   
  
     return(
         <div
          className="FormularioPreguntas">
-            <button
-                onClick={VolverAlHome}
-                className="Button"
-                >Oops!
-            </button>
-            <div 
-            className="Titulos">
-                <h1>¡Crea tu pregunta con Multiple Respuesta!</h1>
-            </div>
-            <h1>¡Hora de comenzar!</h1>
             <section>
-                <h2
-                    className='FormularioPreguntash2'
-                    >Elige una Dificultad.
-                </h2>
             <form onSubmit={handleSubmit}>
             
                 <select 
