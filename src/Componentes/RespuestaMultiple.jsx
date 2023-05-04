@@ -1,5 +1,6 @@
 import { useRef } from "react";
-
+import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
 export function RespuestaMultiple({
         ElegiMultipleRespuesta
 
@@ -10,7 +11,7 @@ export function RespuestaMultiple({
      {
     // Aqui se crearon las variables para guardar la informacion de los inputs
     // realizada por el docente
-    const dificultadAbiertaRef=useRef(null);
+    const dificultadMultipleRef=useRef(null);
     const preguntaMultipleRef = useRef(null);
     const opcionARef= useRef(null);
     const opcionBRef= useRef(null);
@@ -22,6 +23,7 @@ export function RespuestaMultiple({
     // y regresa al elegir pregunta(crearpregunta)
     const handleSubmit=(evento)=>{
         evento.preventDefault();
+        console.log(dificultadMultipleRef.current.value)
         console.log(preguntaMultipleRef.current.value);
         console.log(respuestaMultipleRef.current.value);
         console.log(opcionARef.current.value);
@@ -43,78 +45,77 @@ export function RespuestaMultiple({
             <section>
             <form onSubmit={handleSubmit}>
             
-                <select 
-                    ref={dificultadAbiertaRef}
-                    className="Select-FormularioPreguntas"
-                    name="Dificultad" 
-                    id="NivelDificultad">
-                        <option>Facil</option>
-                        <option>Medio</option>
-                        <option>Dificil</option>
-                </select>
-                <h2
-                    
-                    className="FormularioPreguntash2"
-                    >Escriba su pregunta
-                </h2>
-                <p>Por favor anéxa una pregunta equivalente la dificultad elegida.</p>
-                <input 
-                    ref={preguntaMultipleRef}
-                    className="imputsSeleccion"
-                    type="text" />
-                <h3
-                    className="FormularioPreguntash2"
-                    >Escriba opcion A
-                </h3>
-                <input
-                    ref={opcionARef}
-                    className="imputsSeleccion"
-                    type="text" />
-                <h3
-                    className="FormularioPreguntash2"
-                    >Escriba opcion B
-                </h3>
-                <input
-                    ref={opcionBRef}
-                    className="imputsSeleccion"
-                    type="text" />
-                <h3
-                    className="FormularioPreguntash2"
-                    >Escriba opcion C
-                </h3>
-                <input 
-                    ref={opcionCRef}
-                    className="imputsSeleccion"
-                    type="text" />
-                <h3
-                    className="FormularioPreguntash2"
-                    >Escriba opcion D
-                </h3>
-                <input 
-                ref={opcionDRef}
-                    className="imputsSeleccion"
-                    type="text" />
-                <h3
-                    className="FormularioPreguntash2"
-                    >Elija la respuesta correcta
-                </h3>
-                <select 
-                    ref={respuestaMultipleRef}
-                    className="Select-FormularioPreguntas"
-                    name="Multiple" 
-                    id="RespuestaCorrecta">
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                </select>
-                <button
-                    onClick={handleSubmit}
-                    className='ButtonUp'
-                    >
-                     Subir pregunta
-                </button>
-            
+         <Form.Label htmlFor="inputPassword5">Elija la dificultad de su pregunta</Form.Label>  
+        <Form.Select 
+        ref={dificultadMultipleRef}
+        aria-label="Default select example">
+      <option value="Facil">Facil</option>
+      <option value="Media">Media</option>
+      <option value="Dificil">Dificil</option>
+        </Form.Select>  
+        
+        <br />
+    <Form.Label htmlFor="inputPassword5">Formule su pregunta</Form.Label>
+      <Form.Control
+        ref ={preguntaMultipleRef}
+        type="text"
+        id="PreguntaMultiple"
+        aria-label="Default select example"
+      />
+      <Form.Text id="passwordHelpBlock" muted>
+        Tu pregunta debe ser de tipo respuesta multiple; además debe ser acorde al nivel de dificultad elegido
+      </Form.Text>
+     
+              <br />
+              <Form.Label htmlFor="inputPassword5">Formule la opcion A</Form.Label>
+      <Form.Control
+        ref ={opcionARef}
+        type="text"
+        id="PreguntaMultiple"
+        aria-label="Default select example"
+      />
+      
+               <br />
+               <Form.Label htmlFor="inputPassword5">Formule la opcion B</Form.Label>
+      <Form.Control
+        ref ={opcionBRef}
+        type="text"
+        id="PreguntaMultiple"
+        aria-label="Default select example"
+      />
+               <br />
+               <Form.Label htmlFor="inputPassword5">Formule la opcion C</Form.Label>
+      <Form.Control
+        ref ={opcionCRef}
+        type="text"
+        id="PreguntaMultiple"
+        aria-label="Default select example"
+      />
+               <br />
+               <Form.Label htmlFor="inputPassword5">Formule la opcion D</Form.Label>
+      <Form.Control
+        ref ={opcionDRef}
+        type="text"
+        id="PreguntaMultiple"
+        aria-label="Default select example"
+      />
+               
+               <br />
+               <Form.Label htmlFor="inputPassword5">Elija la respuesta correcta</Form.Label>  
+        <Form.Select 
+        ref={respuestaMultipleRef}
+        aria-label="Default select example">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+        </Form.Select>  
+<br />
+        <Button 
+        variant="outline-dark"
+        onClick={handleSubmit}
+        >Subir pregunta</Button>
+            <br />
             </form>
             </section>
             

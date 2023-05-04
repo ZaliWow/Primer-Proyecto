@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-
+import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
 export function RespuestaAbierta({
         ElegiRespuestaAbierta
 
@@ -31,36 +32,32 @@ export function RespuestaAbierta({
         <section>
        
         <form onSubmit={handleSubmit}>
-
-
-        
-        <select
-            ref={dificultadPreguntaAbiertaRef}
-            className="Select-FormularioPreguntas"
-            name="Dificultad"
-            id="NivelDificultad">
-                <option>Facil</option>
-                <option>Medio</option>
-                <option>Dificil</option>
-        </select>
-        <h3
-        className="FormularioPreguntash3"
-        >Escriba su pregunta</h3>
-        <p>Por favor anéxa una pregunta equivalente la dificultad elegida.</p>
-        <input 
-        ref={PreguntaAbiertaRef}
-        className="imputsSeleccion"
-        type="text"  
-        
-            />
+        <Form.Label htmlFor="inputPassword5">Elija la dificultad de su pregunta</Form.Label>  
+        <Form.Select 
+        ref={dificultadPreguntaAbiertaRef}
+        aria-label="Default select example">
+      <option value="Facil">Facil</option>
+      <option value="Media">Media</option>
+      <option value="Dificil">Dificil</option>
+        </Form.Select>  
+<br />
+    <Form.Label htmlFor="inputPassword5">Formule su pregunta</Form.Label>
+      <Form.Control
+        ref ={PreguntaAbiertaRef}
+        type="text"
+        id="PreguntaAbierta"
+        aria-label="Default select example"
+      />
+      <Form.Text id="passwordHelpBlock" muted>
+        Tu pregunta debe ser de tipo respuesta abierta; además debe ser acorde al nivel de dificultad elegido
+      </Form.Text>
+     
               <br />
-            <button
-            onClick={handleSubmit}
-            className='ButtonUp'
-        >
-            Subir pregunta
-          
-        </button>
+              <Button 
+        variant="outline-dark"
+        onClick={handleSubmit}
+        >Subir pregunta</Button>
+        <br />
         </form>
         </section>
          

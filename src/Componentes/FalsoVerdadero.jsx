@@ -2,7 +2,8 @@ import '../Estilos/_Login.css'
 import '../Estilos/Home.css'
 import '../Estilos/Titulos.css'
 import'../Estilos/FormularioPreguntas.css'
- 
+import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
 import { useRef } from 'react'
 export function FalsoVerdadero({
     ElegiFalsoVerdadero 
@@ -30,60 +31,42 @@ export function FalsoVerdadero({
         <div
         className ="FormularioPreguntas"
         > 
-
-            <section 
-                 
-            >
-                <h1>¡Hora de comenzar!</h1>
-                <h2
-                    className='FormularioPreguntash2'
-                    >Elige una Dificultad.
-                </h2>
                 <form onSubmit={handleSubmit}>
-                <select
-                    ref={dificultadVFRef}
-                    placeholder='Dificultad'
-                    name="dificultad" 
-                    id="NivelDificultad"
-                    className="Select-FormularioPreguntas"
-                    >
-                    <option>Facil</option>
-                    <option>Medio</option>
-                    <option>Dificil</option>
-                </select>
-                <h2
-                    className='FormularioPreguntash2'
-                    >Crea tu Pregunta.
-                </h2>
-                <p>Por favor anéxa una pregunta equivalente la dificultad elegida.</p>
-                <input
-                    ref={preguntaVFRef}
-                    className='imputsSeleccion' 
-                    type="text" />
-                <h2
-                    className='FormularioPreguntash2'
-                    >Elige La respuesta Correcta.
-                </h2>
-                <select 
-                    ref={respuestaVFRef}
-                    name="FV"
-                    id="RespuestaCorrecta"
-                    className="Select-FormularioPreguntas"
-                    >
-                    <option>Falso</option>
-                    <option>Verdadero</option>
-                    
-                    
-                </select>
-                <button
-
-                    className='ButtonUp'
-                    onClick={handleSubmit}
-                >
-                    Subir pregunta
-                </button>
+                <Form.Label htmlFor="inputPassword5">Elija la dificultad de su pregunta</Form.Label>  
+        <Form.Select 
+        ref={dificultadVFRef}
+        aria-label="Default select example">
+      <option value="Facil">Facil</option>
+      <option value="Media">Media</option>
+      <option value="Dificil">Dificil</option>
+        </Form.Select>  
+        <br />
+        <Form.Label htmlFor="inputPassword5">Formule su pregunta</Form.Label>
+      <Form.Control
+        ref ={preguntaVFRef}
+        type="text"
+        id="PreguntaAbierta"
+        aria-label="Default select example"
+      />
+      <Form.Text id="passwordHelpBlock" muted>
+        Tu pregunta debe ser de tipo respuesta Falso o Verdadero; además debe ser acorde al nivel de dificultad elegido
+      </Form.Text>
+                <br />
+                <Form.Label htmlFor="inputPassword5">Elija la respuesta correcta a su pregunta</Form.Label>  
+        <Form.Select 
+        ref={respuestaVFRef}
+        aria-label="Default select example">
+      <option value="Verdadero">Verdadero</option>
+      <option value="Falso">Falso</option>
+        </Form.Select> 
+        <br />
+        <Button 
+        variant="outline-dark"
+        onClick={handleSubmit}
+        >Subir pregunta</Button>
+        <br />
                 </form>
-            </section> 
+           
         </div>
     )
 }

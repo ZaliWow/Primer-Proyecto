@@ -1,14 +1,9 @@
 .FormularioPreguntas{
     
-    width: 1000px;
-    background-color: rgb(255, 255, 255);
-    margin: auto;
-    margin-top: 0px;
-    box-shadow: 7px 13px 37px #ffffff;
-    padding: 20px 30px;
-    border-top: 2px solid #ffffff;
-    color: rgb(0, 0, 0);
-    max-height:auto 300px;
+    margin-top: 0%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 1px snow;
     
 }
 .FormularioPreguntas p {
